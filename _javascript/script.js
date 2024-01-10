@@ -1,7 +1,7 @@
 function createSnow() {
     const snowFlake = document.createElement("div");
     snowFlake.classList.add("snow");
-    snowFlake.innerText = "❄";
+    snowFlake.innerText = "*";
     // Define o posicionamento horizontal aleatório e a duração da animação
     snowFlake.style.left = Math.random() * 100 + "%";
     snowFlake.style.animationDuration = Math.random() * 3 + 2 + "s";

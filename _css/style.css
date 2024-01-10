@@ -7,15 +7,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
     
 }
 
+@keyframes color {
+    0% {
+        background-color: #9eecf1;
+    }
+
+    50% {
+        background-color: greenyellow;
+    }
+
+    100% {
+        background-color: #9eecf1;
+    }
+}
 
 .snow {
     position: absolute; /* Posicionamento absoluto em relação ao seu contêiner mais próximo com posição relativa ou absoluta */
     transform: translateY(0); /* Inicia sem deslocamento vertical */
-    color: white; /* Cor branca para o texto (floco de neve) */
-    font-size: 35px; /* Tamanho do texto (floco de neve) */
+    color: rgb(255, 255, 255); /* Cor branca para o texto (floco de neve) */
+    font-size: 45px; /* Tamanho do texto (floco de neve) */
     animation: fall 1s linear; /* Aplica a animação 'fall' com duração de 1 segundo em estilo linear */
     top: -10vh; /* Posiciona os flocos de neve acima da tela para começarem fora da vista */
 }
@@ -27,8 +43,9 @@ body {
     width: 450px; /* Largura do cartão */
     height: 500px; /* Altura do cartão */
     background-color: #9eecf1; /* Cor de fundo azul claro para o cartão */
-    box-shadow: 15px 1px 50px rgba(0, 0, 0, .2); /* Sombra ao redor do cartão */
+    box-shadow: 20px 5px 50px rgba(0, 0, 0, .2); /* Sombra ao redor do cartão */
     border-radius: 10px; /* Bordas arredondadas */
+    animation: color 12s linear infinite;
 }
 
 /* Pseudo-elemento para estilização adicional */
@@ -53,32 +70,36 @@ body {
     left: 70px; /* Posicionamento horizontal */
 }
 
+
 /* Estilos para os desejos de natal dentro do cartão */
 .wishes {
     position: absolute; /* Posicionamento absoluto dentro do cartão */
-    color: #005F1C; /* Cor verde para o texto */
+    color: greenyellow; /* Cor verde para o texto */
     top: 150px; /* Posicionamento vertical */
     width: 450px; /* Largura para alinhamento do texto */
     text-align: center; /* Centraliza o texto horizontalmente */
-    font-size: 65px; /* Tamanho do texto */
+    font-size: 78px; /* Tamanho do texto */
     font-family: 'Ephesis', cursive; /* Tipo de fonte para o texto */
 }
 
 /* Estilos para subtexto dentro do cartão */
 .subtext {
     position: absolute; /* Posicionamento absoluto dentro do cartão */
-    color: white; /* Cor branca para o texto */
-    top: 250px; /* Posicionamento vertical */
-    width: 450px; /* Largura para alinhamento do texto */
+    color: rgb(255, 255, 255); /* Cor branca para o texto */
+    top: 258px; /* Posicionamento vertical */
+    width: 452px; /* Largura para alinhamento do texto */
     text-align: center; /* Centraliza o texto horizontalmente */
     font-size: 20px; /* Tamanho do texto */
-    font-family: 'Poppins'; /* Tipo de fonte para o texto */
+    font-style: italic;
 }
 
 /* Animação para o movimento de queda dos flocos de neve */
 @keyframes fall {
     0% {
         top: -50px; /* Inicia acima do topo do cartão */
+    }
+    50% {
+        top: 400px;
     }
     100% {
         top: 900px; /* Termina abaixo do fundo do cartão */
@@ -161,3 +182,4 @@ input#open {
 #open:checked~.card-front:before {
     z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
 }
+
